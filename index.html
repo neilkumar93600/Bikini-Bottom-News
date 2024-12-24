@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Turn anything into viral brainrot videos! Transform your boring PDFs and docs into engaging Gen Z content 🚀">
+    <meta name="keywords" content="brainrot, viral videos, gen z content, pdf to video, ai video generator">
+    <meta name="author" content="Brainrot Anything">
+    <meta property="og:title" content="Brainrot Anything - Turn Boring Content into Viral Videos">
+    <meta property="og:description" content="Transform your PDFs and docs into engaging Gen Z content using AI ✨">
+    <meta property="og:image" content="./logo.png">
+    <meta property="og:url" content="https://brainrot-anything.com">
+    <link rel="icon" type="image/png" href="./logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Bikini Bottom News - Next-Gen Underwater Content Studio 🌊</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #003554, #001219);
+            background-size: 400% 400%;
+            animation: gradientFlow 15s ease infinite;
+            color: #fff;
+            margin: 0;
+            min-height: 100vh;
+            background-image: url('https://example.com/bubbles-bg.png'); /* Add subtle bubble background */
+        }
+
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50% }
+            50% { background-position: 100% 50% }
+            100% { background-position: 0% 50% }
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #00c6fb, #005bea, #0047ab, #00c6fb);
+            background-size: 300% 100%;
+            animation: shimmer 3s infinite;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 0% 50% }
+            100% { background-position: 100% 50% }
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .upload-section {
+            background: rgba(0, 30, 60, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .drop-zone {
+            height: 100%;
+            border: 2px dashed rgba(72, 209, 204, 0.5);
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+            border-radius: 12px;
+            padding: 3rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .drop-zone:hover {
+            border-color: #00FFFF;
+            background: rgba(0, 255, 255, 0.1);
+        }
+
+        .modern-button {
+            background: linear-gradient(135deg, #004e92, #000428);
+            border: none;
+            padding: 1.2rem 2.5rem;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .modern-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .modern-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .modern-button:hover::before {
+            left: 100%;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .video-card {
+            background: #111;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-card video {
+            width: 100%;
+            aspect-ratio: 9/16;
+            object-fit: cover;
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 3px solid #00FFFF;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+            margin: 2rem auto;
+            display: none;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+
+        .custom-text-toggle textarea {
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+            resize: none;
+        }
+
+        .custom-text-toggle textarea:focus {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        /* Smooth transition for toggle */
+        #customTextInput {
+            max-height: 0;
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #customTextInput:not(.hidden) {
+            max-height: 200px;
+            opacity: 1;
+        }
+
+        .toggle-btn {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+            background: transparent;
+        }
+
+        .toggle-btn.active {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 198, 251, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .toggle-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .toggle-btn svg {
+            opacity: 0.5;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-btn.active svg {
+            opacity: 1;
+        }
+
+        .glass-effect.rounded-xl {
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        #customText::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        #customText {
+            background: rgba(0, 30, 60, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Add pointer cursor to buttons */
+        .toggle-btn, 
+        .modern-button {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* Ensure buttons are clickable by setting proper z-index */
+        .toggle-btn {
+            position: relative;
+            z-index: 10;
+        }
+
+        .modern-button {
+            position: relative;
+            z-index: 10;
+        }
+
+        #fileUploadSection, #customTextSection {
+            height: 300px; /* Or whatever specific height you want both sections to have */
+        }
+    </style>
+    <script src="main.js" defer></script>
+</head>
+
+<body class="relative bg-[#006994] text-white min-h-screen">
+    <div class="container mx-auto px-4 py-8 flex flex-col justify-center items-center">
+        <section class="hero text-center mb-6 relative">
+            
+            <h1 class="text-6xl font-bold mb-6 relative">
+                <span class="gradient-text">Bikini Bottom News</span> 
+                <span class="animate-bounce inline-block">🌊</span>
+            </h1>
+            <p class="text-2xl text-gray-300 max-w-3xl mx-auto glass-effect p-4 rounded-xl">
+                Transform your PDF, Document or Images into hilarious underwater news reports!
+            </p>
+        </section>
+
+        <div class="max-w-7xl mx-auto max-h-3xl">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Upload Section -->
+                <div class="lg:col-span-5 lg:col-start-1 lg:col-end-6 pt-10 flex flex-col justify-center items-center">
+                    <!-- Marquee Section -->
+                    <div class="lg:col-span-5 lg:col-start-1 lg:col-end-6">
+                        <div class="marquee-container bg-[rgba(0,77,153,0.7)] backdrop-blur-sm rounded-xl p-3 shadow-lg">
+                            <marquee behavior="scroll" direction="left" scrollamount="12" class="text-[#00FFFF] font-bold text-lg">
+                                🌊 BREAKING NEWS from Bikini Bottom! 📰 |
+                                🦀 Mr. Krabs approved content generator! 💰 |
+                                🧽 SpongeBob's favorite news maker! 🍍 |
+                                🐟 Fish-friendly content creation! 🐠 |
+                                🗞️ More reliable than the Chum Bucket! 🪣
+                            </marquee>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5">
+                        <div class="upload-section glass-effect p-6">
+                            <!-- Toggle buttons -->
+                            <div class="flex justify-center mb-6">
+                                <div class="glass-effect rounded-xl p-1 flex">
+                                    <button type="button" id="fileToggle" class="toggle-btn active px-6 py-2 rounded-lg transition-all duration-300">
+                                        <svg class="w-5 h-5 inline-block mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4 16V17C4 19.2091 5.79086 21 8 21H16C18.2091 21 20 19.2091 20 17V16M4 8V7C4 4.79086 5.79086 3 8 3H16C18.2091 3 20 4.79086 20 7V8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                            <path d="M12 8V16M12 8L9 11M12 8L15 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        File Upload
+                                    </button>
+                                    <button type="button" id="customToggle" class="toggle-btn px-6 py-2 rounded-lg transition-all duration-300">
+                                        <svg class="w-5 h-5 inline-block mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4 5H20M4 12H20M4 19H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                        </svg>
+                                        Custom Text
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div id="formsContainer">
+                                <!-- File Upload Form -->
+                                <div id="fileUploadSection">
+                                    <div class="drop-zone glass-effect" id="dropZone">
+                                        <div class="p-10 text-center">
+                                            <svg class="mx-auto mb-6 w-16 h-16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 16V4M12 4L8 8M12 4L16 8" stroke="#00c6fb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M3 15V19C3 19.5304 3.21071 20.0391 3.58579 20.4142C3.96086 20.7893 4.46957 21 5 21H19C19.5304 21 20.0391 20.7893 20.4142 20.4142C20.7893 20.0391 21 19.5304 21 19V15" stroke="#00c6fb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                            <p class="text-xl mb-3">Drop your files here or <span
+                                                    class="text-pink-500 font-semibold">browse</span></p>
+                                            <p class="text-gray-400">Supports PDF, DOC, Images (Max 8MB)</p>
+                                            <input type="file" id="fileInput" accept=".png, .jpeg, .jpg, .doc, .docx, .pdf"
+                                                class="hidden">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Custom Text Form -->
+                                <div id="customTextSection" class="hidden h-full lg:w-[400px]">
+                                    <div class="relative h-full">
+                                        <textarea 
+                                            id="customText" 
+                                            class="w-full h-full p-4 rounded-xl bg-opacity-10 bg-white backdrop-blur-md border border-gray-400 focus:border-[#00c6fb] focus:ring-2 focus:ring-[#00c6fb] focus:ring-opacity-50 resize-none text-white placeholder-gray-400"
+                                            placeholder="Enter your custom text here..."
+                                            maxlength="1000"
+                                        ></textarea>
+                                        <div class="absolute bottom-2 right-2 text-sm text-gray-400">
+                                            <span id="charCount">0</span>/1000
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Shared submit button -->
+                                <div class="flex justify-center items-center mt-6">
+                                    <button type="button" id="submitButton" class="modern-button group w-2/3 flex justify-center items-center space-x-2">
+                                        <span class="relative z-10 text-lg font-semibold">CREATE MAGIC</span>
+                                        <span class="relative z-10 animate-pulse">✨</span>
+                                        <div class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Arrow Animation -->
+                <div class="lg:col-span-2 flex justify-center items-center">
+                    <div class="icon-parent rotate-90 lg:rotate-0">
+                        <span class="icon-Container scale-150">
+                            <svg width="48" height="57" viewBox="0 0 16 19" fill="#111"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="1.61321" cy="1.61321" r="1.5" fill="white">
+                                    <animate attributeName="opacity" values="1;0.3;1" dur="2s"
+                                        repeatCount="indefinite" />
+                                </circle>
+                                <circle cx="5.73583" cy="1.61321" r="1.5" fill="white">
+                                    <animate attributeName="opacity" values="1;0.3;1" dur="2s" begin="0.2s"
+                                        repeatCount="indefinite" />
+                                </circle>
+                                <circle cx="5.73583" cy="5.5566" r="1.5" fill="white">
+                                    <animate attributeName="opacity" values="1;0.3;1" dur="2s" begin="0.4s"
+                                        repeatCount="indefinite" />
+                                </circle>
+                                <circle cx="9.85851" cy="5.5566" r="1.5" fill="white">
+                                    <animate attributeName="opacity" values="1;0.3;1" dur="2s" begin="0.6s"
+                                        repeatCount="indefinite" />
+                                </circle>
+                                <circle cx="9.85851" cy="9.5" r="1.5" fill="white">
+                                    <animate attributeName="opacity" values="1;0.3;1" dur="2s" begin="0.8s"
+                                        repeatCount="indefinite" />
+                                </circle>
+                                <circle cx="13.9811" cy="9.5" r="1.5" fill="white">
+                                    <animate attributeName="opacity" values="1;0.3;1" dur="2s" begin="1s"
+                                        repeatCount="indefinite" />
+                                </circle>
+                                <circle cx="5.73583" cy="13.4434" r="1.5" fill="white">
+                                    <animate attributeName="opacity" values="1;0.3;1" dur="2s" begin="1.2s"
+                                        repeatCount="indefinite" />
+                                </circle>
+                                <circle cx="9.85851" cy="13.4434" r="1.5" fill="white">
+                                    <animate attributeName="opacity" values="1;0.3;1" dur="2s" begin="1.4s"
+                                        repeatCount="indefinite" />
+                                </circle>
+                                <circle cx="1.61321" cy="17.3868" r="1.5" fill="white">
+                                    <animate attributeName="opacity" values="1;0.3;1" dur="2s" begin="1.6s"
+                                        repeatCount="indefinite" />
+                                </circle>
+                                <circle cx="5.73583" cy="17.3868" r="1.5" fill="white">
+                                    <animate attributeName="opacity" values="1;0.3;1" dur="2s" begin="1.8s"
+                                        repeatCount="indefinite" />
+                                </circle>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Video Preview Section -->
+                <div class="lg:col-span-3 flex flex-col justify-center">
+                    <div class="video-grid">
+                        <div class="video-card bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg">
+                            <!-- Sample Video Container -->
+                            <div id="sampleVideoContainer">
+                                <p class="p-4 m-0 text-gray-300 text-base font-medium border-b border-gray-700">Sample Video:</p>
+                                <video id="sampleVideo" class="w-full aspect-[9/16] object-cover" autoplay muted loop playsinline>
+                                    <source src="https://vibevision-bucket.s3.amazonaws.com/673f6f9885fb945764526ea0_bikini-bottom-news_1734797302502_video.mp4" type="video/mp4">
+                                </video>
+                            </div>
+
+                            <!-- Generated Video Container -->
+                            <div id="generatedVideoContainer" class="hidden">
+                                <p class="p-4 m-0 text-gray-300 text-base font-medium border-b border-gray-700">Your Generated Video:</p>
+                                <div class="relative">
+                                    <video id="videoPlayer" class="w-full aspect-[9/16] object-cover">
+                                        <p class="text-gray-400">Your browser does not support the video tag.</p>
+                                    </video>
+                                    <!-- Video Controls -->
+                                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent z-10">
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center gap-3">
+                                                <button id="playPauseBtn" class="text-white hover:text-[#00c6fb] transition-colors">
+                                                    <svg class="w-8 h-8 play-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M8 5.14V19.14L19 12.14L8 5.14Z" fill="currentColor"/>
+                                                    </svg>
+                                                    <svg class="w-8 h-8 pause-icon hidden" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M6 4H10V20H6V4ZM14 4H18V20H14V4Z" fill="currentColor"/>
+                                                    </svg>
+                                                </button>
+                                                <div class="flex items-center gap-2">
+                                                    <button id="muteBtn" class="text-white hover:text-[#00c6fb] transition-colors">
+                                                        <svg class="w-6 h-6 volume-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M15.5 8.5C16.5 9.5 17 10.5 17 12C17 13.5 16.5 14.5 15.5 15.5M18 5C20.5 7.5 21 10 21 12C21 14 20.5 16.5 18 19M3 11V13H7L12 18V6L7 11H3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>
+                                                        <svg class="w-6 h-6 mute-icon hidden" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            <path d="M23 9L17 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            <path d="M17 9L23 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>
+                                                    </button>
+                                                    <input type="range" id="volumeSlider" class="w-20 accent-[#00c6fb]" min="0" max="1" step="0.1" value="1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Action Buttons -->
+                                <div class="p-4 flex gap-4">
+                                    <a id="downloadBtn" href="#" download class="flex-1">
+                                        <button class="w-full bg-[#004e92] hover:bg-[#003554] text-white font-bold py-3 px-6 rounded-xl transition-all transform hover:scale-105 hover:shadow-xl flex items-center justify-center gap-2">
+                                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M4 16V17C4 17.7956 4.31607 18.5587 4.87868 19.1213C5.44129 19.6839 6.20435 20 7 20H17C17.7956 20 18.5587 19.6839 19.1213 19.1213C19.6839 18.5587 20 17.7956 20 17V16M16 12L12 16M12 16L8 12M12 16V4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                            Download Video
+                                        </button>
+                                    </a>
+                                    <button id="createAgainBtn" class="flex-1 bg-[#003554] hover:bg-[#004e92] text-white font-bold py-3 px-6 rounded-xl transition-all transform hover:scale-105 hover:shadow-xl flex items-center justify-center gap-2">
+                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4 4V9H4.58152M19.9381 11C19.446 7.05369 16.0796 4 12 4C8.64262 4 5.76829 6.06817 4.58152 9M4.58152 9H9M20 20V15H19.4185M19.4185 15C18.2317 17.9318 15.3574 20 12 20C7.92038 20 4.55399 16.9463 4.06189 13M19.4185 15H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Create Again
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- QR Code -->
+        <!-- <div class="absolute bottom-6 right-6 z-50 flex flex-col items-center hidden md:flex">
+            <div class="absolute bottom-40 right-6 rounded-xl shadow-2xl transform rotate-90 mb-2">
+                <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+                    type="module"></script>
+                <dotlottie-player src="https://lottie.host/ee27c5c2-4121-418f-b635-bdeac53316d6/995cr6rKaY.lottie"
+                    background="transparent" speed="1" style="width: 100px; height: 100px" loop
+                    autoplay></dotlottie-player>
+            </div>
+            <div class="rounded-xl shadow-2xl flex justify-center items-center">
+                <img src="./qr.png" alt="QR Code" class="w-32 h-32 rounded-lg">
+            </div>
+            <p class="text-gray-300 text-base font-medium mb-2">Scan QR code</p>
+        </div> -->
+    </div>
+
+    <style>
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</body>
+
+</html>
