@@ -4,15 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Turn anything into viral brainrot videos! Transform your boring PDFs and docs into engaging Gen Z content 🚀">
-    <meta name="keywords" content="brainrot, viral videos, gen z content, pdf to video, ai video generator">
-    <meta name="author" content="Brainrot Anything">
-    <meta property="og:title" content="Brainrot Anything - Turn Boring Content into Viral Videos">
-    <meta property="og:description" content="Transform your PDFs and docs into engaging Gen Z content using AI ✨">
+    <meta name="description" 
+        content="Transform your PDFs, documents and images into hilarious Bikini Bottom news reports! The most reliable underwater news generator in the seven seas 🌊">
+    <meta name="keywords" content="bikini bottom news, spongebob, underwater news, pdf converter, document converter, image converter, news generator">
+    <meta name="author" content="Bikini Bottom News">
+    <meta name="theme-color" content="#00c6fb">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bikini Bottom News - Transform Documents into Underwater News">
+    <meta property="og:description" content="Create hilarious underwater news reports from your PDFs, documents and images! Trusted by SpongeBob SquarePants himself 🧽">
     <meta property="og:image" content="./logo.png">
-    <meta property="og:url" content="https://brainrot-anything.com">
+    <meta property="og:url" content="https://www.pdftobikinibottom.com">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Bikini Bottom News">
+    <meta property="twitter:description" content="Create hilarious underwater news reports from your PDFs, documents and images! Trusted by SpongeBob SquarePants himself 🧽">
+    <meta property="twitter:image" content="./logo.png">
     <link rel="icon" type="image/png" href="./logo.png">
+    <link rel="apple-touch-icon" href="./logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
@@ -21,25 +28,21 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #003554, #001219);
-            background-size: 400% 400%;
-            animation: gradientFlow 15s ease infinite;
+            background: linear-gradient(135deg, #000205, #000c1a);
             color: #fff;
             margin: 0;
             min-height: 100vh;
-            background-image: url('https://example.com/bubbles-bg.png'); /* Add subtle bubble background */
-        }
-
-        @keyframes gradientFlow {
-            0% { background-position: 0% 50% }
-            50% { background-position: 100% 50% }
-            100% { background-position: 0% 50% }
+            background-image: 
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%" height="100%" filter="url(%23noise)" opacity="0.1"/%3E%3C/svg%3E');
+            background-attachment: fixed;
         }
 
         .gradient-text {
-            background: linear-gradient(90deg, #00c6fb, #005bea, #0047ab, #00c6fb);
+            background: linear-gradient(90deg, #00c6fb, #005bea, #0033ab, #00c6fb);
             background-size: 300% 100%;
             animation: shimmer 3s infinite;
+            text-shadow: 0 0 30px rgba(0, 198, 251, 0.4);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -51,17 +54,16 @@
         }
 
         .glass-effect {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
         }
 
         .upload-section {
-            background: rgba(0, 30, 60, 0.4);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            background: rgba(0, 5, 15, 0.8);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.03);
             border-radius: 20px;
             padding: 2rem;
             margin: 2rem 0;
@@ -72,8 +74,8 @@
 
         .drop-zone {
             height: 100%;
-            border: 2px dashed rgba(72, 209, 204, 0.5);
-            background: rgba(0, 0, 0, 0.2);
+            border: 2px dashed rgba(0, 198, 251, 0.2);
+            background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(5px);
             border-radius: 12px;
             padding: 3rem;
@@ -86,24 +88,24 @@
         }
 
         .drop-zone:hover {
-            border-color: #00FFFF;
-            background: rgba(0, 255, 255, 0.1);
+            background: rgba(0, 198, 251, 0.05);
+            border-color: rgba(0, 198, 251, 0.4);
         }
 
         .modern-button {
-            background: linear-gradient(135deg, #004e92, #000428);
+            background: linear-gradient(135deg, #001219, #000814);
             border: none;
             padding: 1.2rem 2.5rem;
             border-radius: 12px;
             position: relative;
             overflow: hidden;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 198, 251, 0.15);
         }
 
         .modern-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 20px rgba(0, 198, 251, 0.3);
         }
 
         .modern-button::before {
@@ -129,10 +131,11 @@
         }
 
         .video-card {
-            background: #111;
+            background: rgba(0, 0, 0, 0.7);
             border-radius: 20px;
             overflow: hidden;
             transition: all 0.3s ease;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
         }
 
         .video-card:hover {
@@ -234,8 +237,14 @@
         }
 
         #customText {
-            background: rgba(0, 30, 60, 0.3);
-            backdrop-filter: blur(10px);
+            background: rgba(0, 10, 20, 0.6);
+            color: #fff;
+            border-color: rgba(0, 198, 251, 0.3);
+        }
+
+        #customText:focus {
+            border-color: #00c6fb;
+            box-shadow: 0 0 0 2px rgba(0, 198, 251, 0.2);
         }
 
         /* Add pointer cursor to buttons */
@@ -259,11 +268,16 @@
         #fileUploadSection, #customTextSection {
             height: 300px; /* Or whatever specific height you want both sections to have */
         }
+
+        .marquee-container {
+            background: rgba(0, 5, 15, 0.9) !important;
+            border: 1px solid rgba(0, 198, 251, 0.05);
+        }
     </style>
     <script src="main.js" defer></script>
 </head>
 
-<body class="relative bg-[#006994] text-white min-h-screen">
+<body class="relative bg-[#000510] text-white min-h-screen">
     <div class="container mx-auto px-4 py-8 flex flex-col justify-center items-center">
         <section class="hero text-center mb-6 relative">
             
@@ -349,7 +363,7 @@
                                 <!-- Shared submit button -->
                                 <div class="flex justify-center items-center mt-6">
                                     <button type="button" id="submitButton" class="modern-button group w-2/3 flex justify-center items-center space-x-2">
-                                        <span class="relative z-10 text-lg font-semibold">CREATE MAGIC</span>
+                                        <span class="relative z-10 text-lg font-semibold">CREATE NEWS</span>
                                         <span class="relative z-10 animate-pulse">✨</span>
                                         <div class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                     </button>
